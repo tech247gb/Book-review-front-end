@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-item {
+  margin: 0 2px;
+}
+
+.page-link {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: #FFF;
+  color: #FF5733;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.page-link:hover {
+  background-color: #e0e0e0;
+}
+
+.active .page-link {
+  background-color: #C70039;
+  color: white;
+}
+
+.page-item.disabled .page-link {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modal container */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+  background: white;
+  border-radius: 8px;
+  padding: 16px 25px;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* Header section */
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  margin-bottom: 16px;
+}
+
+/* Scrollable content area */
+.modal-body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: calc(90vh - 180px);
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Opera) */
+.modal-body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.modal-body {
+  scrollbar-width: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
