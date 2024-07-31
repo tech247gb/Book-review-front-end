@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaTimes, FaUser } from 'react-icons/fa';
-import StarRating from './StarRating';
-import { Book } from '../types/Book';
+import StarRating from '../StarRating/StarRating';
+import { Book } from '../../types/Book';
+import ImageThumbnail from '../ImageThumbnail/ImageThumbnail';
 
 interface ModalProps {
     show: boolean;
@@ -34,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ show, onClose, book }) => {
                 </button>
                 <div className="modal-header">
                     <h2 className="text-2xl font-bold text-gray-800">{book.title}</h2>
-                    <img src={book.coverImage} alt={book.title} className="w-full h-48 object-cover mb-4" />
+                    <ImageThumbnail imageUrl={book.coverImage || 'No image'} title={book.title} />
                     <div className="flex items-center mb-4">
                         <FaUser className="text-gray-600 mr-2" />
                         <p className="text-gray-600">{book.author}</p>
@@ -44,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({ show, onClose, book }) => {
                     </div>
                 </div>
                 <div className="modal-body">
-                    <p className="text-gray-700">{book.review}</p>
+                    <p className="text-gray-700 whitespace-pre-line">{book.review}</p>
                 </div>
             </div>
         </div>

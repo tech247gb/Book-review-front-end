@@ -21,12 +21,10 @@ const PrivateRoute: React.FC = () => {
                     },
                 }
                 );
-                // Assuming the response indicates a valid token
                 if (response.status === 200) {
                     setIsAuthenticated(true);
                 }
             } catch (error) {
-                // Token is invalid or expired, redirect to login
                 setIsAuthenticated(false);
             } finally {
                 setLoading(false);
@@ -36,13 +34,8 @@ const PrivateRoute: React.FC = () => {
         verifyToken();
     }, [setIsAuthenticated]);
 
-    // Show a loading spinner or message while verifying
     if (loading) return <Spinner/>
-
-    // Redirect to login page if not authenticated
     if (!isAuthenticated) return <Navigate to="/login" replace />;
-
-    // Render child components if authenticated
     return <Outlet />;
 };
 

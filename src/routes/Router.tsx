@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter as Router
+import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthContextProvider } from '../context/AuthContext';
 import { SearchContextProvider } from '../context/SearchContext';
 import Layout from '../Layout/Layout';
