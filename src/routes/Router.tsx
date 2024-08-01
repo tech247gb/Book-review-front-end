@@ -14,7 +14,6 @@ import ManageProfile from '../components/User/components/Forms/ManageProfileForm
 import ReviewListing from '../components/User/components/Pages/ReviewListing';
 import UpdateReviewForm from '../components/User/components/Forms/UpdateReviewForm';
 import NotFound from '../components/NotFound/NotFound';
-import SingleReview from '../components/SingleReview/SingleReview';
 import SearchResults from '../components/SearchResults/SearchResults';
 import BookReviews from '../components/BookReviews/BookReviews';
 
@@ -29,7 +28,6 @@ const AppRouter: React.FC = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/reviews" element={<BookReviews />} />
                             <Route path="/search" element={<SearchResults />} />
-                            <Route path="/reviews/:id" element={<SingleReview />} />
                             <Route element={<PublicRoute />}>
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/register" element={<Registration />} />
